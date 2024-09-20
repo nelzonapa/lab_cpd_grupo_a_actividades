@@ -3,7 +3,8 @@
 
 using namespace std;
 
-#define MAX 1000  //puedo cambiuar tam MAtriz vectores
+#define MAX 10000 
+//puedo cambiuar tam MAtriz vectores
 
 
 int A[MAX][MAX], x[MAX], y[MAX]; 
@@ -61,3 +62,16 @@ int main() {
 
     return 0;
 }
+
+/*
+Se puede ver en los resultados que si aumentamos el número de elementos, podemos ver la diferencia:
+
+50:
+
+1000:
+
+5000:
+
+10000:
+
+*/
