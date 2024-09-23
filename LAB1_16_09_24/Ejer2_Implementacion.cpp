@@ -33,14 +33,14 @@ int main() {
 
     for (int i = 0; i < tamanios.size(); i++) {
         int N = tamanios[i];
-        // Crear matrices dinámicamente
+        //matrices
         vector<vector<int>> A(N, vector<int>(N));
         vector<vector<int>> B(N, vector<int>(N));
         vector<vector<int>> C(N, vector<int>(N));
 
         inicializarMatrices(A, B, C, N);
 
-        // Medir el tiempo de multiplicación
+        //para medir tiempo
         clock_t inicio = clock();
         multiplicarMatrices(A, B, C, N);
         clock_t fin = clock();

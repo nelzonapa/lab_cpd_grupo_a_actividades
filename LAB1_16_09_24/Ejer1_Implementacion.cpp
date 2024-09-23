@@ -47,31 +47,18 @@ int main() {
     inicio_tiempo = clock();  //Inicia clock de inicio
     primer_for();
     stop = clock();    //termina el conteo
-    double time_first = double(stop - inicio_tiempo) / CLOCKS_PER_SEC;  // Calculamos el tiempo
-    cout << "Tiempo del primer  for " << time_first << " s" << endl;
+    double tiempo_primer_for = double(stop - inicio_tiempo) / CLOCKS_PER_SEC;  //calculamos tiempo
+    cout << "Tiempo del primer  for " << tiempo_primer_for << " s" << endl;
     
-    // Reiniciamos el vector y a 0
+    // Reiniciamos vector "y" a 0
     for (int i = 0; i < MAX; i++) y[i] = 0;
     
 
     inicio_tiempo = clock(); 
     segundo_for();   
     stop = clock();   
-    double time_second = double(stop - inicio_tiempo) / CLOCKS_PER_SEC;
-    cout << "Tiempo del segundo for: " << time_second << " s"<<endl;
+    double tiempo_Segundo_for = double(stop - inicio_tiempo) / CLOCKS_PER_SEC;
+    cout << "Tiempo del segundo for: " << tiempo_Segundo_for << " s"<<endl;
 
     return 0;
 }
-
-/*
-Se puede ver en los resultados que si aumentamos el número de elementos, podemos ver la diferencia:
-
-50:
-
-1000:
-
-5000:
-
-10000:
-
-*/

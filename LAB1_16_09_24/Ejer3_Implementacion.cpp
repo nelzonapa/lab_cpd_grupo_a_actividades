@@ -9,19 +9,19 @@ using namespace std;
 void inicializarMatriz(int A[N][N], int B[N][N], int C[N][N]) {
     for (int i = 0; i < N; i++) {
         for (int j = 0; j < N; j++) {
-            A[i][j] = rand() % 10; // valores aleatorios
+            A[i][j] = rand() % 10; //aleatorios
             B[i][j] = rand() % 10;
-            C[i][j] = 0; // Inicializar C en cero
+            C[i][j] = 0;
         }
     }
 }
 
-// Multiplicación por bloques
+//multiplicación por bloques
 void multiplicacionBloques(int A[N][N], int B[N][N], int C[N][N]) {
     for (int k = 0; k < N; k += blockSize) {
         for (int l = 0; l < N; l += blockSize) {
             for (int m = 0; m < N; m += blockSize) {
-                // Multiplicación dentro de los bloques
+                //multiplicación dentro de bloques
                 for (int i = k; i < min(k + blockSize, N); i++) {
                     for (int j = l; j < min(l + blockSize, N); j++) {
                         int sum = 0;
@@ -40,13 +40,14 @@ int main() {
     int A[N][N], B[N][N], C[N][N];
     inicializarMatriz(A, B, C);
 
-    clock_t start, end;
-    start = clock();
+    //comienza tiempo
+    clock_t inicio, end;
+    inicio = clock();
     multiplicacionBloques(A, B, C);
     end = clock();
 
-    double time_taken = double(end - start) / CLOCKS_PER_SEC;
-    cout << "Tiempo de multiplicación por bloques: " << time_taken << " segundos." << endl;
+    double tiempoTotal = double(end - inicio) / CLOCKS_PER_SEC;
+    cout << "Tiempo de multiplicación por bloques: " << tiempoTotal << " segundos." << endl;
 
     return 0;
 }
